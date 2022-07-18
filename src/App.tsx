@@ -1,3 +1,5 @@
+import { Time } from "./Time";
+
 export function App(): JSX.Element {
-  return <>hej!</>;
+  return <Time />;
 }
