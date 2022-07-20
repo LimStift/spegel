@@ -344,10 +344,10 @@
   resolved "https://registry.yarnpkg.com/@tanstack/query-core/-/query-core-4.0.0.tgz#76ee3707d237715b446044305fd5ae2bcc740b2c"
   integrity sha512-EwapQGCC3TLK3ciedzcqXhlxQkGJ9GYe92ayxN+F+UCgQJWzpyp7Qez5bCTiSQLONM2Pg1Q6oDchpgd+ny2Wmg==
 
-"@tanstack/react-query@^4.0.0":
-  version "4.0.0"
-  resolved "https://registry.yarnpkg.com/@tanstack/react-query/-/react-query-4.0.0.tgz#b4684b4e8c82a0b6814e72f355b22cebe352d501"
-  integrity sha512-LgsYIYftCfg4zfgzvNoIbWeiB4LIQFV+PaFgoJUlUhHoJQ6dvxXYTOqM+uiMgYJuZ2dRYJb8REPUuh38Hmn0qg==
+"@tanstack/react-query@^4.0.7":
+  version "4.0.5"
+  resolved "https://registry.yarnpkg.com/@tanstack/react-query/-/react-query-4.0.5.tgz#4597ac03394ddfa6ad8b5e1beb6282468623d398"
+  integrity sha512-tIggVlhoFevVpY/LkZroPmrERFHN8tw4aZLtgwSArzHmMJ03WQcaNvbbHy6GERidXtaMdUz+IeQryrE7cO7WPQ==
   dependencies:
     "@tanstack/query-core" "^4.0.0-beta.1"
     "@types/use-sync-external-store" "^0.0.3"
@@ -1671,11 +1671,6 @@ node-releases@^2.0.6:
   version "2.0.6"
   resolved "https://registry.yarnpkg.com/node-releases/-/node-releases-2.0.6.tgz#8a7088c63a55e493845683ebf3c828d8c51c5503"
   integrity sha512-PiVXnNuFm5+iYkLBNeq5211hvO38y63T0i2KKh2KnUs3RpzJ+JtODFjkD8yjLwnDkTYF1eKXheUwdssR+NRZdg==
-
-ntp-client@^0.5.3:
-  version "0.5.3"
-  resolved "https://registry.yarnpkg.com/ntp-client/-/ntp-client-0.5.3.tgz#03c0c8da67e3f4997da083d4682dcce0d9208a35"
-  integrity sha512-/Ja8ljm8V0yb+zZnjEaJlFY3abA9gIpQcnkX8RJ59NzHVcnJJpGoKtU3UcrnAwRfduYAktI+2gJLpn1NepxgnA==
 
 object-assign@^4.1.1:
   version "4.1.1"
