@@ -1,11 +1,13 @@
 import { Time } from "./Time";
+import { Travel } from "./Travel";
 import { Weather } from "./Weather";
 
 export function App(): JSX.Element {
   return (
     <>
       <Time /> <br />
-      <Weather />
+      <Weather /> <br />
+      <Travel />
     </>
   );
 }
