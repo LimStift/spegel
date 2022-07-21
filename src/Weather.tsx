@@ -1,5 +1,4 @@
 import { QueryClient, QueryClientProvider, useQuery } from "@tanstack/react-query";
-import { useState } from "react";
 const queryClient = new QueryClient();
 
 export function Weather(): JSX.Element {
@@ -42,12 +41,7 @@ function useFetchWeather(): null | WeatherData {
 }
 
 function DisplayWeather(): JSX.Element {
-  const [weather, setWeather] = useState<null | WeatherData>(null);
-
   const weatherData = useFetchWeather();
-  if (weather === null && weatherData !== null) {
-    setWeather(weatherData);
-  }
 
-  return <>Väder: {weather?.timeSeries[0].parameters.find((p) => p.name === "t")?.values[0]}c</>;
+  return <>Väder: {weatherData?.timeSeries[0].parameters.find((p) => p.name === "t")?.values[0]}c</>;
 }
