@@ -58,11 +58,11 @@ function DisplayTravel(): JSX.Element {
     <>
       <h1>Kommande bussar (rundelsvägen)</h1>
       {buses.slice(0, 4).map((bus) => (
-        <p key={bus.JourneyDetailRef.ref}>{formatDepartureTime(bus.time) + " mot " + bus.direction}</p>
+        <p key={bus.JourneyDetailRef.ref}>{`${formatDepartureTime(bus.time)} mot ${bus.direction}`}</p>
       ))}
       <h1>Kommande Tåg</h1>
       {trains.slice(0, 4).map((train) => (
-        <p key={train.JourneyDetailRef.ref}>{formatDepartureTime(train.time) + " mot " + train.direction}</p>
+        <p key={train.JourneyDetailRef.ref}>{`${formatDepartureTime(train.time)} mot ${train.direction}`}</p>
       ))}
     </>
   );
