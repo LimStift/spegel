@@ -46,6 +46,10 @@ function useFetchTravelByTrain(): Departure[] {
   return useFetchTravel("740001547");
 }
 
+function formatDepartureTime(time: string) {
+  return time.split(":").slice(0, 2).join(":");
+}
+
 function DisplayTravel(): JSX.Element {
   const buses = useFetchTravelByBus();
   const trains = useFetchTravelByTrain();
@@ -53,10 +57,12 @@ function DisplayTravel(): JSX.Element {
   return (
     <>
       <h1>Kommande bussar (rundelsvägen)</h1>
-      {buses.map((bus) => bus.time + " " + bus.direction)}
+      {buses.slice(0, 4).map((bus) => (
+        <p key={bus.JourneyDetailRef.ref}>{formatDepartureTime(bus.time) + " mot " + bus.direction}</p>
+      ))}
       <h1>Kommande Tåg</h1>
-      {trains.map((train) => (
-        <p key={train.JourneyDetailRef.ref}>{train.time + ": " + train.direction}</p>
+      {trains.slice(0, 4).map((train) => (
+        <p key={train.JourneyDetailRef.ref}>{formatDepartureTime(train.time) + " mot " + train.direction}</p>
       ))}
     </>
   );
