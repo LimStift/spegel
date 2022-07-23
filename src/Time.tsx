@@ -29,6 +29,18 @@ function useFetchTime(): Date {
   return new Date(data.datetime);
 }
 
+function formatTime(time: Date) {
+  return `${time.toLocaleString("sv", { hour: "numeric" })}:${time.toLocaleString("sv", {
+    minute: "numeric",
+  })}`;
+}
+
+function formatDate(date: Date) {
+  return `${date.toLocaleString("sv", { weekday: "long" })} ${date.getDate()} ${date.toLocaleString("sv", {
+    month: "long",
+  })}`;
+}
+
 function DisplayTime(): JSX.Element {
   const [internalTime, setInternalTime] = useState<Date | null>(null);
   const [displayedTime, setDisplayedTime] = useState<Date | null>(null);
@@ -46,5 +58,14 @@ function DisplayTime(): JSX.Element {
     return () => clearInterval(interval);
   }, [internalTime, displayedTime]);
 
-  return <>{displayedTime?.toLocaleTimeString() ?? "Ingen data"}</>;
+  if (displayedTime === null) {
+    return <>Ingen data</>;
+  }
+
+  return (
+    <>
+      <p>{formatTime(displayedTime)}</p>
+      <p>{formatDate(displayedTime)}</p>
+    </>
+  );
 }
