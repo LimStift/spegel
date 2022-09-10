@@ -31,8 +31,8 @@ function useFetchTime(): Date {
 
 function formatTime(time: Date) {
   return `${time.toLocaleString("sv", { hour: "numeric" })}:${time.toLocaleString("sv", {
-    minute: "numeric",
-  })}`;
+    minute: "2-digit",
+  })}:${time.toLocaleString("sv", { second: "2-digit" })}`;
 }
 
 function formatDate(date: Date) {
