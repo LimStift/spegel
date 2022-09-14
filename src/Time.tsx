@@ -22,7 +22,7 @@ function useFetchTime(): Date {
       fetch("http://worldtimeapi.org/api/timezone/Europe/Stockholm").then((res) => res.json())
   );
 
-  if (isLoading || error) {
+  if (isLoading || error || data === undefined) {
     return new Date();
   }
 

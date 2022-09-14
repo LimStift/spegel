@@ -11,7 +11,7 @@ export function Travel(): JSX.Element {
 }
 
 interface Journey {
-  departures: Departure[];
+  Departure: Departure[];
 }
 
 interface Departure {
@@ -31,7 +31,7 @@ function useFetchTravel(stopId: string): Departure[] {
       ).then((res) => res.json())
   );
 
-  if (isLoading || error) {
+  if (isLoading || error || data === undefined) {
     return [];
   }
 

@@ -12,9 +12,8 @@ export function InternalPower(): JSX.Element {
 
 export function DisplayPowerUsage(): JSX.Element {
   const powerUsage = useFetchPowerUsage();
-  console.log(powerUsage);
 
-  return <p>Använd el: {powerUsage[powerUsage.length - 1].state}</p>;
+  return <p>Använd el: {powerUsage[powerUsage.length - 1].state}kWh</p>;
 }
 
 interface SensorValue {
@@ -38,7 +37,7 @@ function useFetchPowerUsage() {
       ).then((res) => res.json())
   );
 
-  if (isLoading || error) {
+  if (isLoading || error || data === undefined) {
     return [{ state: 0 }];
   }
 
