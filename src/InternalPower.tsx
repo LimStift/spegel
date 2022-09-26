@@ -23,18 +23,10 @@ interface SensorValue {
 }
 
 function useFetchPowerUsage() {
-  const periodCutoff = new Date(Date.now() - 600000); // Last 10 mins
   const { isLoading, error, data } = useQuery(
     ["powerUsage"],
     (): Promise<Array<Array<SensorValue>>> =>
-      fetch(
-        `http://192.168.1.100:8123/api/history/period/${periodCutoff.toISOString()}?filter_entity_id=sensor.power_consumed`,
-        {
-          headers: {
-            Authorization: `Bearer ${import.meta.env.VITE_HOMEASSISTANT_TOKEN}`,
-          },
-        }
-      ).then((res) => res.json())
+      fetch(`http://${import.meta.env.VITE_BACKEND_HOST}/api/internalpower`).then((res) => res.json())
   );
 
   if (isLoading || error || data === undefined) {

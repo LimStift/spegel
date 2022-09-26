@@ -28,9 +28,7 @@ interface Parameter {
 
 function useFetchWeather(): null | WeatherData {
   const { isLoading, error, data } = useQuery(["timeData"], () =>
-    fetch(
-      "https://opendata-download-metfcst.smhi.se/api/category/pmp3g/version/2/geotype/point/lon/12.9081/lat/55.8557/data.json"
-    ).then((res) => res.json())
+    fetch(`http://${import.meta.env.VITE_BACKEND_HOST}/api/weather`).then((res) => res.json())
   );
 
   if (isLoading || error) {

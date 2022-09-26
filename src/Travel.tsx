@@ -20,15 +20,11 @@ interface Departure {
   direction: string;
 }
 
-function useFetchTravel(stopId: string): Departure[] {
+function useFetchTravel(type: string): Departure[] {
   const { isLoading, error, data } = useQuery(
-    [stopId],
+    [type],
     (): Promise<Journey> =>
-      fetch(
-        `https://api.resrobot.se/v2.1/departureBoard?id=${stopId}&duration=240&format=json&accessId=${
-          import.meta.env.VITE_RESROBOT_ACCESS_ID
-        }`
-      ).then((res) => res.json())
+      fetch(`http://${import.meta.env.VITE_BACKEND_HOST}/api/${type}`).then((res) => res.json())
   );
 
   if (isLoading || error || data === undefined) {
@@ -39,11 +35,11 @@ function useFetchTravel(stopId: string): Departure[] {
 }
 
 function useFetchTravelByBus(): Departure[] {
-  return useFetchTravel("740017393");
+  return useFetchTravel("travelbus");
 }
 
 function useFetchTravelByTrain(): Departure[] {
-  return useFetchTravel("740001547");
+  return useFetchTravel("traveltrain");
 }
 
 function formatDepartureTime(time: string) {

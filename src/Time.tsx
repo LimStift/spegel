@@ -19,7 +19,7 @@ function useFetchTime(): Date {
   const { isLoading, error, data } = useQuery(
     ["timeData"],
     (): Promise<WorldTime> =>
-      fetch("http://worldtimeapi.org/api/timezone/Europe/Stockholm").then((res) => res.json())
+      fetch(`http://${import.meta.env.VITE_BACKEND_HOST}/api/time`).then((res) => res.json())
   );
 
   if (isLoading || error || data === undefined) {
