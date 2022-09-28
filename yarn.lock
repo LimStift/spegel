@@ -519,7 +519,7 @@ __metadata:
     eslint-plugin-react-hooks: 4.6.0
     react: 18.2.0
     react-dom: 18.2.0
-    vite: 3.1.3
+    vite: 3.1.4
   peerDependencies:
     eslint: 8.24.0
   languageName: unknown
@@ -4620,9 +4620,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"vite@npm:3.1.3":
-  version: 3.1.3
-  resolution: "vite@npm:3.1.3"
+"vite@npm:3.1.4":
+  version: 3.1.4
+  resolution: "vite@npm:3.1.4"
   dependencies:
     esbuild: ^0.15.6
     fsevents: ~2.3.2
@@ -4648,7 +4648,7 @@ __metadata:
       optional: true
   bin:
     vite: bin/vite.js
-  checksum: c8f7062b9018d7fdb8391ede4133c98341cc15a9323a39d9c4485e03dd1db93818f40d6580313d6ce5b8a4f2058e53dd7b0dd4e39f3f6ac7ed7ca83f540e7505
+  checksum: 95cb33b0499be210167ed4fa29e2b86c18c8314c9042962a2b52df154e5d55dea52945d6eaf70e2786176bda6669e24d50a99c4c12ae93947ad8818b55c85d99
   languageName: node
   linkType: hard
 
