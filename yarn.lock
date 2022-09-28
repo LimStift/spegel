@@ -4241,7 +4241,7 @@ __metadata:
     concurrently: 7.4.0
     eslint: 8.24.0
     prettier: 2.7.1
-    typescript: 4.8.3
+    typescript: 4.8.4
   languageName: unknown
   linkType: soft
 
@@ -4503,23 +4503,23 @@ __metadata:
   languageName: node
   linkType: hard
 
-"typescript@npm:4.8.3":
-  version: 4.8.3
-  resolution: "typescript@npm:4.8.3"
+"typescript@npm:4.8.4":
+  version: 4.8.4
+  resolution: "typescript@npm:4.8.4"
   bin:
     tsc: bin/tsc
     tsserver: bin/tsserver
-  checksum: b7cd1fadba69a891edfbcaf1c5b9c8e7cbdbe979729ef7fdbe8bfa2818c8c141024e433d4430e874890400caf4afd6ab7baa7c2e247e39c9c7b5a80754804ac6
+  checksum: 663bf455b21ac024e719bb8c6a07bcaaa027a9943abfb58a694b59789e7d08578badb5556170267ad480e31786b8b4c8ab3c9c0e597d3b8df39af800e43c6ed5
   languageName: node
   linkType: hard
 
-"typescript@patch:typescript@4.8.3#~builtin<compat/typescript>":
-  version: 4.8.3
-  resolution: "typescript@patch:typescript@npm%3A4.8.3#~builtin<compat/typescript>::version=4.8.3&hash=a1c5e5"
+"typescript@patch:typescript@4.8.4#~builtin<compat/typescript>":
+  version: 4.8.4
+  resolution: "typescript@patch:typescript@npm%3A4.8.4#~builtin<compat/typescript>::version=4.8.4&hash=a1c5e5"
   bin:
     tsc: bin/tsc
     tsserver: bin/tsserver
-  checksum: 513000149a2d1f4b01c6f2b0831c0929407661a559b60d6e668c3983bd7b4218dfc0084f997ea9bb3ec908bd60fceefa58f7502ce81f840a574529dd7a012429
+  checksum: 1718691812158b74a29fe29e1c2031150719c24e8a8157c215b2d4db5bc9c5f59427185a0661e65f8875957b921a047946cf51da05c4c9c632c2dbfd1a43e105
   languageName: node
   linkType: hard
 
