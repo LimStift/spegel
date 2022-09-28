@@ -532,7 +532,7 @@ __metadata:
     "@types/cors": ^2.8.12
     "@types/express": 4.17.14
     "@types/morgan": 1.9.3
-    "@types/node": 18.7.21
+    "@types/node": 18.7.23
     "@types/xml2js": 0.4.11
     concurrently: 7.4.0
     cors: ^2.8.5
@@ -664,10 +664,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/node@npm:18.7.21":
-  version: 18.7.21
-  resolution: "@types/node@npm:18.7.21"
-  checksum: b2bbb2e07ebdf0df7c67ac8696706e11c98634478ae7cf1ab730221b089bcc80d7802a622fb2c1719e27d8acc3be871f8bdf5e2ddbcb45be0a5101b726c1bc28
+"@types/node@npm:18.7.23":
+  version: 18.7.23
+  resolution: "@types/node@npm:18.7.23"
+  checksum: dbc790c0d76ff9e8b8ee5a0e6f978fd23ae63320e26c22aff19e2d539ba5542224ff67155f2faa383d41c80ec1d9ffdd2cd0f9fd705fd32c3aba2ca4dcdd6c19
   languageName: node
   linkType: hard
 
