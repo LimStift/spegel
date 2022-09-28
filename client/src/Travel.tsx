@@ -53,13 +53,27 @@ function DisplayTravel(): JSX.Element {
   return (
     <>
       <h1>Kommande bussar (Rundelsvägen)</h1>
-      {buses.slice(0, 4).map((bus) => (
-        <p key={bus.JourneyDetailRef.ref}>{`${formatDepartureTime(bus.time)} mot ${bus.direction}`}</p>
-      ))}
+      {buses.length > 0 ? (
+        buses
+          .slice(0, 4)
+          .map((bus) => (
+            <p key={bus.JourneyDetailRef.ref}>{`${formatDepartureTime(bus.time)} mot ${bus.direction}`}</p>
+          ))
+      ) : (
+        <p>Det går inga bussar nu.</p>
+      )}
       <h1>Kommande tåg</h1>
-      {trains.slice(0, 4).map((train) => (
-        <p key={train.JourneyDetailRef.ref}>{`${formatDepartureTime(train.time)} mot ${train.direction}`}</p>
-      ))}
+      {trains.length > 0 ? (
+        trains
+          .slice(0, 4)
+          .map((train) => (
+            <p key={train.JourneyDetailRef.ref}>{`${formatDepartureTime(train.time)} mot ${
+              train.direction
+            }`}</p>
+          ))
+      ) : (
+        <p>Det går inga tåg nu.</p>
+      )}
     </>
   );
 }
