@@ -536,7 +536,7 @@ __metadata:
     "@types/xml2js": 0.4.11
     concurrently: 7.4.0
     cors: ^2.8.5
-    dotenv: 16.0.2
+    dotenv: 16.0.3
     express: 5.0.0-beta.1
     morgan: 1.10.0
     node-fetch: 3.2.10
@@ -1576,10 +1576,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"dotenv@npm:16.0.2":
-  version: 16.0.2
-  resolution: "dotenv@npm:16.0.2"
-  checksum: e9b64fa45f0b693875db50f1876c1202be8e936500aa664478247ab06b2fe8096cc1ab238919771dbdd1f65490b7efe65b61401d3cd61bcea88eab7c2bf06964
+"dotenv@npm:16.0.3":
+  version: 16.0.3
+  resolution: "dotenv@npm:16.0.3"
+  checksum: 109457ac5f9e930ca8066ea33887b6f839ab24d647a7a8b49ddcd1f32662e2c35591c5e5b9819063e430148a664d0927f0cbe60cf9575d89bc524f47ff7e78f0
   languageName: node
   linkType: hard
 
