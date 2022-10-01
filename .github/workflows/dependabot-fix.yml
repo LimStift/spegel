@@ -40,8 +40,8 @@ jobs:
       - name: Install and commit yarn.lock
         working-directory: .
         run: |
-          git config user.name "[name]"
-          git config user.email "[email]"
+          git config user.name "Hampus Nilsson"
+          git config user.email "limstift_88@msn.com"
           git reset --soft HEAD~1
           git restore --staged yarn.lock
           git checkout -- yarn.lock
