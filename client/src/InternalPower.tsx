@@ -1,4 +1,5 @@
 import { QueryClient, QueryClientProvider, useQuery } from "@tanstack/react-query";
+import { Area, AreaChart, CartesianGrid, XAxis, YAxis } from "recharts";
 
 const queryClient = new QueryClient();
 
@@ -19,7 +20,24 @@ export function DisplayPowerUsage(): JSX.Element {
 
   const currentUsage = powerUsage[powerUsage.length - 1];
 
-  return <p>Använd el just nu: {currentUsage?.value ?? -1}kWh</p>;
+  return (
+    <>
+      <p>Använd el just nu: {currentUsage?.value ?? -1}kWh</p>
+      <AreaChart width={400} height={200} data={powerUsage}>
+        <Area dataKey="value" isAnimationActive={false}></Area>
+        <CartesianGrid stroke="#ccc" strokeDasharray="5 5" />
+        <XAxis
+          dataKey="date"
+          interval={12}
+          tickFormatter={(v) => {
+            const date = new Date(v);
+            return date.toLocaleTimeString("sv", { minute: "2-digit", hour: "2-digit" });
+          }}
+        />
+        <YAxis scale="sequential" label="kWh" />
+      </AreaChart>
+    </>
+  );
 }
 
 interface SensorValue {
