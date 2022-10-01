@@ -13,6 +13,10 @@ export function InternalPower(): JSX.Element {
 export function DisplayPowerUsage(): JSX.Element {
   const powerUsage = useFetchPowerUsage();
 
+  if (powerUsage.length <= 0) {
+    return <p>Ingen data.</p>;
+  }
+
   const currentUsage = powerUsage[powerUsage.length - 1];
 
   return <p>Använd el just nu: {currentUsage?.value ?? -1}kWh</p>;

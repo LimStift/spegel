@@ -17,9 +17,13 @@ export function DisplayPowerMarket(): JSX.Element {
 }
 
 function useFetchPrice(): number[] {
-  const { isLoading, error, data } = useQuery(["powerMarket"], (): Promise<number[]> => {
-    return fetch(`http://${import.meta.env.VITE_BACKEND_HOST}/api/powermarket`).then((res) => res.json());
-  });
+  const { isLoading, error, data } = useQuery(
+    ["powerMarket"],
+    (): Promise<number[]> => {
+      return fetch(`http://${import.meta.env.VITE_BACKEND_HOST}/api/powermarket`).then((res) => res.json());
+    },
+    { refetchInterval: 3600000 }
+  );
 
   if (isLoading || error || data === undefined) {
     return [-1];

@@ -24,7 +24,8 @@ function useFetchTravel(type: string): Departure[] {
   const { isLoading, error, data } = useQuery(
     [type],
     (): Promise<Journey> =>
-      fetch(`http://${import.meta.env.VITE_BACKEND_HOST}/api/${type}`).then((res) => res.json())
+      fetch(`http://${import.meta.env.VITE_BACKEND_HOST}/api/${type}`).then((res) => res.json()),
+    { refetchInterval: 60000 }
   );
 
   if (isLoading || error || data === undefined) {

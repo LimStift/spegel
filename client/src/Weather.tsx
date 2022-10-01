@@ -27,8 +27,10 @@ interface Parameter {
 }
 
 function useFetchWeather(): null | WeatherData {
-  const { isLoading, error, data } = useQuery(["timeData"], () =>
-    fetch(`http://${import.meta.env.VITE_BACKEND_HOST}/api/weather`).then((res) => res.json())
+  const { isLoading, error, data } = useQuery(
+    ["timeData"],
+    () => fetch(`http://${import.meta.env.VITE_BACKEND_HOST}/api/weather`).then((res) => res.json()),
+    { refetchInterval: 600000 }
   );
 
   if (isLoading || error) {
