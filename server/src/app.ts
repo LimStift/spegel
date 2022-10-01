@@ -44,10 +44,14 @@ app.get("/api/powermarket", async (req, res) => {
       `out_Domain=10Y1001A1001A47J&` +
       `periodStart=${today.getFullYear()}${today.toLocaleString("sv", {
         month: "2-digit",
-      })}${today.getDate()}1100&` +
+      })}${today.toLocaleString("sv", {
+        day: "2-digit",
+      })}1100&` +
       `periodEnd=${today.getFullYear()}${today.toLocaleString("sv", {
         month: "2-digit",
-      })}${today.getDate()}1200`
+      })}${today.toLocaleString("sv", {
+        day: "2-digit",
+      })}1200`
   );
 
   const data = await parseStringPromise(await response.text());
