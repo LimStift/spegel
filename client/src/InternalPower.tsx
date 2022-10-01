@@ -13,25 +13,27 @@ export function InternalPower(): JSX.Element {
 export function DisplayPowerUsage(): JSX.Element {
   const powerUsage = useFetchPowerUsage();
 
-  return <p>Använd el: {powerUsage[powerUsage.length - 1].state}kWh</p>;
+  const currentUsage = powerUsage[powerUsage.length - 1];
+
+  return <p>Använd el just nu: {currentUsage?.value ?? -1}kWh</p>;
 }
 
 interface SensorValue {
-  entity_id: string;
-  state: number;
-  last_changed: Date;
+  value: number;
+  date: Date;
 }
 
 function useFetchPowerUsage() {
   const { isLoading, error, data } = useQuery(
     ["powerUsage"],
-    (): Promise<Array<Array<SensorValue>>> =>
-      fetch(`http://${import.meta.env.VITE_BACKEND_HOST}/api/internalpower`).then((res) => res.json())
+    (): Promise<SensorValue[]> =>
+      fetch(`http://${import.meta.env.VITE_BACKEND_HOST}/api/internalpower`).then((res) => res.json()),
+    { refetchInterval: 10000 }
   );
 
   if (isLoading || error || data === undefined) {
-    return [{ state: 0 }];
+    return [];
   }
 
-  return data[0];
+  return data;
 }

@@ -16,6 +16,12 @@ app.get("/", (req, res) => {
   res.send("Express + TypeScript Server");
 });
 
+interface SensorValue {
+  entity_id: string;
+  state: number;
+  last_changed: Date;
+}
+
 app.get("/api/internalpower", async (req, res) => {
   const periodCutoff = new Date(Date.now() - 600000); // Last 10 mins
   const response = await fetch(
@@ -27,7 +33,12 @@ app.get("/api/internalpower", async (req, res) => {
     }
   );
 
-  res.send(await response.json());
+  const responseJson = (await response.json()) as SensorValue[][];
+  const result = responseJson[0].map((s) => {
+    return { date: s.last_changed, value: s.state };
+  });
+
+  res.send(result);
 });
 
 interface Point {
