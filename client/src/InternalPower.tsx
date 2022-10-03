@@ -29,12 +29,9 @@ export function DisplayPowerUsage(): JSX.Element {
         <XAxis
           dataKey="date"
           interval={12}
-          tickFormatter={(v) => {
-            const date = new Date(v);
-            return date.toLocaleTimeString("sv", { minute: "2-digit", hour: "2-digit" });
-          }}
+          tickFormatter={(v) => new Date(v).toLocaleTimeString("sv", { minute: "2-digit", hour: "2-digit" })}
         />
-        <YAxis scale="sequential" label="kWh" />
+        <YAxis scale="sequential" label="kWh" domain={[0, (dataMax: number) => Math.max(1, dataMax)]} />
       </AreaChart>
     </>
   );
