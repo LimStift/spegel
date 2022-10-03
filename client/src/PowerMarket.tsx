@@ -23,7 +23,7 @@ export function DisplayPowerMarket(): JSX.Element {
   return (
     <>
       <p>Elpris:</p>
-      <BarChart width={800} height={200} data={prices[0].concat(prices[1])}>
+      <BarChart width={800} height={200} data={prices[0].concat(prices[1] ?? [])}>
         <Bar dataKey="value" fill="#c00">
           {prices[0]
             .map((p, i) => (
@@ -32,7 +32,7 @@ export function DisplayPowerMarket(): JSX.Element {
                 key={`cell-0${i}`}
               />
             ))
-            .concat(prices[1].map((_, i) => <Cell fill={"#ccc"} key={`cell-1${i}`} />))}
+            .concat(prices[1]?.map((_, i) => <Cell fill={"#ccc"} key={`cell-1${i}`} />) ?? [])}
         </Bar>
         <CartesianGrid stroke="#ccc" strokeDasharray="5 5" vertical={false} />
         <XAxis
