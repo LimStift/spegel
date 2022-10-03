@@ -42,11 +42,14 @@ app.get("/api/internalpower", async (req, res) => {
 });
 
 interface Point {
+  position: number;
   "price.amount": string[];
 }
 
 app.get("/api/powermarket", async (req, res) => {
   const today = new Date();
+  const tomorrow = new Date();
+  tomorrow.setDate(tomorrow.getDate() + 1);
   const response = await fetch(
     "https://web-api.tp.entsoe.eu/api?" +
       `securityToken=${process.env.ENTSOE_TOKEN ?? ""}&` +
@@ -58,9 +61,9 @@ app.get("/api/powermarket", async (req, res) => {
       })}${today.toLocaleString("sv", {
         day: "2-digit",
       })}1100&` +
-      `periodEnd=${today.getFullYear()}${today.toLocaleString("sv", {
+      `periodEnd=${tomorrow.getFullYear()}${tomorrow.toLocaleString("sv", {
         month: "2-digit",
-      })}${today.toLocaleString("sv", {
+      })}${tomorrow.toLocaleString("sv", {
         day: "2-digit",
       })}1200`
   );
@@ -68,8 +71,13 @@ app.get("/api/powermarket", async (req, res) => {
   const data = await parseStringPromise(await response.text());
 
   res.send(
-    data.Publication_MarketDocument.TimeSeries[0].Period[0].Point.map((e: Point) =>
-      parseFloat(e["price.amount"][0])
+    data.Publication_MarketDocument.TimeSeries.map((s: { Period: { Point: Point[] }[] }) =>
+      s.Period[0].Point.map((e: Point) => {
+        return {
+          value: parseFloat(e["price.amount"][0]),
+          date: new Date(today.getUTCFullYear(), today.getUTCMonth(), today.getUTCDate(), e.position - 1),
+        };
+      })
     )
   );
 });
