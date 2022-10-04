@@ -510,8 +510,6 @@ __metadata:
     "@tanstack/react-query": 4.9.0
     "@types/react": 18.0.21
     "@types/react-dom": 18.0.6
-    "@typescript-eslint/eslint-plugin": 5.39.0
-    "@typescript-eslint/parser": 5.39.0
     "@vitejs/plugin-react": 2.1.0
     eslint-plugin-import: 2.26.0
     eslint-plugin-jsx-a11y: 6.6.1
