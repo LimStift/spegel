@@ -508,6 +508,7 @@ __metadata:
   resolution: "@spegel/client@workspace:client"
   dependencies:
     "@tanstack/react-query": 4.12.0
+    "@types/prop-types": ^15
     "@types/react": 18.0.21
     "@types/react-dom": 18.0.6
     "@vitejs/plugin-react": 2.1.0
@@ -515,6 +516,7 @@ __metadata:
     eslint-plugin-jsx-a11y: 6.6.1
     eslint-plugin-react: 7.31.10
     eslint-plugin-react-hooks: 4.6.0
+    prop-types: ^15.8.1
     react: 18.2.0
     react-dom: 18.2.0
     recharts: ^2.1.15
@@ -718,7 +720,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/prop-types@npm:*":
+"@types/prop-types@npm:*, @types/prop-types@npm:^15":
   version: 15.7.5
   resolution: "@types/prop-types@npm:15.7.5"
   checksum: 648aae41423821c61c83823ae36116c8d0f68258f8b609bdbc257752dcd616438d6343d554262aa9a7edaee5a19aca2e028a74fa2d0f40fffaf2816bc7056857
