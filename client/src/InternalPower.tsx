@@ -1,5 +1,7 @@
 import { QueryClient, QueryClientProvider, useQuery } from "@tanstack/react-query";
+import React, { useEffect } from "react";
 import { Area, AreaChart, CartesianGrid, XAxis, YAxis } from "recharts";
+import { useGlobalState } from "./hooks/GlobalStateContext";
 
 const queryClient = new QueryClient();
 
@@ -13,16 +15,21 @@ export function InternalPower(): JSX.Element {
 
 export function DisplayPowerUsage(): JSX.Element {
   const powerUsage = useFetchPowerUsage();
+  const context = useGlobalState();
+  useEffect(() => {
+    if (powerUsage.length > 0) {
+      context.dispatch({ type: "setUsage", currentPowerUsage: powerUsage[powerUsage.length - 1]?.value });
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [powerUsage]);
 
   if (powerUsage.length <= 0) {
     return <p>Ingen data.</p>;
   }
 
-  const currentUsage = powerUsage[powerUsage.length - 1];
-
   return (
     <>
-      <p>Använd el just nu: {currentUsage?.value ?? -1}kWh</p>
+      <p>Använd el just nu: {context.state.currentPowerUsage ?? -1}kWh</p>
       <AreaChart width={400} height={200} data={powerUsage}>
         <Area dataKey="value" isAnimationActive={false}></Area>
         <CartesianGrid stroke="#ccc" strokeDasharray="5 5" />

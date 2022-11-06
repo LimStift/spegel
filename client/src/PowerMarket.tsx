@@ -1,5 +1,7 @@
 import { QueryClient, QueryClientProvider, useQuery } from "@tanstack/react-query";
+import { useEffect } from "react";
 import { Bar, BarChart, CartesianGrid, Cell, XAxis, YAxis } from "recharts";
+import { useGlobalState } from "./hooks/GlobalStateContext";
 
 const queryClient = new QueryClient();
 
@@ -13,6 +15,15 @@ export function PowerMarket(): JSX.Element {
 
 export function DisplayPowerMarket(): JSX.Element {
   const prices = useFetchPrice();
+  const context = useGlobalState();
+  useEffect(() => {
+    if (prices.length > 0) {
+      const currentHour = new Date().getHours();
+      console.log("hour", currentHour);
+      context.dispatch({ type: "setPrice", currentPowerPrice: prices[0][currentHour]?.value });
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [prices]);
 
   if (prices.length <= 0) {
     return <p>Ingen data.</p>;
@@ -22,7 +33,7 @@ export function DisplayPowerMarket(): JSX.Element {
 
   return (
     <>
-      <p>Elpris:</p>
+      <p>Elpris (just nu {context.state.currentPowerPrice} öre):</p>
       <BarChart width={800} height={200} data={prices[0].concat(prices[1] ?? [])}>
         <Bar dataKey="value" fill="#c00">
           {prices[0]
