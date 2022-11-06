@@ -1,4 +1,5 @@
 import React from "react";
+import { CurrentPowerCost } from "./CurrentPowerCost";
 import { GlobalStateProvider } from "./hooks/GlobalStateContext";
 import { InternalPower } from "./InternalPower";
 import { PowerMarket } from "./PowerMarket";
@@ -12,6 +13,7 @@ export function App(): JSX.Element {
       <Time /> <br />
       <Weather /> <br />
       <Travel /> <br />
+      <CurrentPowerCost />
       <InternalPower /> <br />
       <PowerMarket />
     </GlobalStateProvider>
