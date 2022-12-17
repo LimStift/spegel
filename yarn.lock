@@ -560,7 +560,7 @@ __metadata:
     dotenv: 16.0.3
     express: 5.0.0-beta.1
     morgan: 1.10.0
-    node-fetch: 3.2.10
+    node-fetch: 3.3.0
     nodemon: 2.0.20
     xml2js: 0.4.23
   languageName: unknown
@@ -3586,14 +3586,14 @@ __metadata:
   languageName: node
   linkType: hard
 
-"node-fetch@npm:3.2.10":
-  version: 3.2.10
-  resolution: "node-fetch@npm:3.2.10"
+"node-fetch@npm:3.3.0":
+  version: 3.3.0
+  resolution: "node-fetch@npm:3.3.0"
   dependencies:
     data-uri-to-buffer: ^4.0.0
     fetch-blob: ^3.1.4
     formdata-polyfill: ^4.0.10
-  checksum: b9b754517df2dd55d16eaa6be681d277fe772ea0ac61e67ca4aef8f5154baf8581e2fd32c03cb8c5fdefa07dc24cafdb327b2033715edd9e4abc6883e20650c0
+  checksum: aaacc95460358c56f17fdaa8e65dbe2a7afd26c0b0c0f72edb96cc55901e7d4eab4e7d2c922e91c41f1c442a469aad65d60782e2c3e3b12492742c06e741fbd1
   languageName: node
   linkType: hard
 
