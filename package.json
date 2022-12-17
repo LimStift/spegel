@@ -24,7 +24,7 @@
     "build": "yarn workspace @spegel/client build && yarn workspace @spegel/server build"
   },
   "devDependencies": {
-    "@typescript-eslint/eslint-plugin": "5.42.0",
+    "@typescript-eslint/eslint-plugin": "5.46.1",
     "@typescript-eslint/parser": "5.42.0",
     "concurrently": "7.5.0",
     "eslint": "8.27.0",
