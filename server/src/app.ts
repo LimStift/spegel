@@ -46,6 +46,10 @@ interface Point {
   "price.amount": string[];
 }
 
+interface ExchangeRate {
+  rates: { SEK: number };
+}
+
 app.get("/api/powermarket", async (req, res) => {
   const today = new Date();
   const tomorrow = new Date();
@@ -67,6 +71,8 @@ app.get("/api/powermarket", async (req, res) => {
         day: "2-digit",
       })}1200`
   );
+  const exchangeResponse = await fetch("https://api.exchangerate.host/latest?base=EUR&symbols=SEK");
+  const exchangeRate = (await exchangeResponse.json()) as ExchangeRate;
 
   const data = await parseStringPromise(await response.text());
 
@@ -74,7 +80,7 @@ app.get("/api/powermarket", async (req, res) => {
     data.Publication_MarketDocument.TimeSeries.map((s: { Period: { Point: Point[] }[] }) =>
       s.Period[0].Point.map((e: Point) => {
         return {
-          value: parseFloat(e["price.amount"][0]),
+          value: (parseFloat(e["price.amount"][0]) / 1000) * exchangeRate.rates.SEK * 100 * 1.25 + 26.45 + 49,
           date: new Date(today.getUTCFullYear(), today.getUTCMonth(), today.getUTCDate(), e.position - 1),
         };
       })

@@ -1,4 +1,3 @@
-import React from "react";
 import { CurrentPowerCost } from "./CurrentPowerCost";
 import { GlobalStateProvider } from "./hooks/GlobalStateContext";
 import { InternalPower } from "./InternalPower";

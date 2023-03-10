@@ -19,7 +19,6 @@ export function DisplayPowerMarket(): JSX.Element {
   useEffect(() => {
     if (prices.length > 0) {
       const currentHour = new Date().getHours();
-      console.log("hour", currentHour);
       context.dispatch({ type: "setPrice", currentPowerPrice: prices[0][currentHour]?.value });
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
@@ -33,7 +32,7 @@ export function DisplayPowerMarket(): JSX.Element {
 
   return (
     <>
-      <p>Elpris (just nu {context.state.currentPowerPrice} öre):</p>
+      <p>Elpris (just nu {context.state.currentPowerPrice.toFixed(0)} öre):</p>
       <BarChart width={800} height={200} data={prices[0].concat(prices[1] ?? [])}>
         <Bar dataKey="value" fill="#c00">
           {prices[0]
