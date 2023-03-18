@@ -630,7 +630,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@spegel/client@workspace:client"
   dependencies:
-    "@tanstack/react-query": 4.26.1
+    "@tanstack/react-query": 4.27.0
     "@types/prop-types": 15.7.5
     "@types/react": 18.0.28
     "@types/react-dom": 18.0.11
@@ -669,18 +669,18 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@tanstack/query-core@npm:4.26.1":
-  version: 4.26.1
-  resolution: "@tanstack/query-core@npm:4.26.1"
-  checksum: 9df752f897de918a79a1e759a672a414919314c2871bc4e40b603ecc56358de9a76fe44c7bdf5ba2988b9092a035dd14b545f5c91dd052d5d3241dd2bf3d5f7a
+"@tanstack/query-core@npm:4.27.0":
+  version: 4.27.0
+  resolution: "@tanstack/query-core@npm:4.27.0"
+  checksum: e84b986180a3fbe8076cc75078368171bf220175bed7c815ba90cf277c4b9b1f5792bc4094a432a7e340d40a7ae8c133dbe38a0ca37eec3072aeb0ddb85a27e3
   languageName: node
   linkType: hard
 
-"@tanstack/react-query@npm:4.26.1":
-  version: 4.26.1
-  resolution: "@tanstack/react-query@npm:4.26.1"
+"@tanstack/react-query@npm:4.27.0":
+  version: 4.27.0
+  resolution: "@tanstack/react-query@npm:4.27.0"
   dependencies:
-    "@tanstack/query-core": 4.26.1
+    "@tanstack/query-core": 4.27.0
     use-sync-external-store: ^1.2.0
   peerDependencies:
     react: ^16.8.0 || ^17.0.0 || ^18.0.0
@@ -691,7 +691,7 @@ __metadata:
       optional: true
     react-native:
       optional: true
-  checksum: 1b7a01f69d91ce3c894b9565fac24ddbc16183b53b187420adabc19b4112079b99ed1fee478e71695f1061d3795b962822fe7187d9c2a35f2bd522152c413534
+  checksum: 9950475b3b72cbf5e915293853d5e29e1f144c1944553306d3559c33ed3fdb0e61160ca8d0f81aae44d122fd36d96be4e0323d9cf18b1a3d1e7c57d6eea5781f
   languageName: node
   linkType: hard
 
