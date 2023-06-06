@@ -643,7 +643,7 @@ __metadata:
     react: 18.2.0
     react-dom: 18.2.0
     recharts: 2.4.3
-    vite: 4.1.4
+    vite: 4.1.5
   peerDependencies:
     eslint: 8.35.0
   languageName: unknown
@@ -5297,9 +5297,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"vite@npm:4.1.4":
-  version: 4.1.4
-  resolution: "vite@npm:4.1.4"
+"vite@npm:4.1.5":
+  version: 4.1.5
+  resolution: "vite@npm:4.1.5"
   dependencies:
     esbuild: ^0.16.14
     fsevents: ~2.3.2
@@ -5331,7 +5331,7 @@ __metadata:
       optional: true
   bin:
     vite: bin/vite.js
-  checksum: 300618519501cebeaf095b8794202b89a4a4c75baae5e0690dd324ed8cb6bd27f6971959f5883b13e711fb6f473acbec81b2161f148299843936568c931a033b
+  checksum: 5dcc3c1ede757245ccaa7d8b4c2faf0cc3fac8d359daf71019e46fd7c9d89fd32f9d935f35ab210aad6527db8cd3c6753a6198433e699a47fb3c9222a7f61021
   languageName: node
   linkType: hard
 
